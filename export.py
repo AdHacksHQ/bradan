@@ -264,7 +264,7 @@ def out_package(db, outdir, title):
               "deterministic (same text = same vector, 512-dim, L2-normalized) "
               "— cosine similarity works with no model download.", "",
               "**Rebuild/extend:** the producing pipeline is "
-              "github.com/MediaPlural/consumer (MIT): point it at any source "
+              "github.com/MediaPlural/bradan (MIT): point it at any source "
               "(website, zip, gdrive, course) and it re-creates this package."]
     with open(os.path.join(outdir, "INGEST.md"), "w") as f:
         f.write("\n".join(lines) + "\n")

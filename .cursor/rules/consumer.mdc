@@ -1,5 +1,5 @@
 ---
-description: Consumer engine knowledge: invoke MediaPlural/consumer CLI (source.py, graph.py, bank.py) when consuming courses/videos/PDFs/websites/email into a queryable knowledge graph, authoring courses, running connectors, or querying the graph (search/semantic/hybrid/filter/insight/maths).
+description: Consumer engine knowledge: invoke MediaPlural/bradan CLI (source.py, graph.py, bank.py) when consuming courses/videos/PDFs/websites/email into a queryable knowledge graph, authoring courses, running connectors, or querying the graph (search/semantic/hybrid/filter/insight/maths).
 globs:
 alwaysApply: false
 ---

@@ -426,7 +426,7 @@ def test_bank_act_lanes():
     if shutil.which("gh"):
         st = subprocess.run(["gh", "auth", "status"], capture_output=True, text=True, timeout=60)
         if st.returncode == 0:
-            repo = "MediaPlural/consumer"
+            repo = "MediaPlural/bradan"
             title = "[smoke] bank act-lane test (auto-closed)"
             r = subprocess.run([PY, os.path.join(HERE, "bank.py"), "act", "repo", "create-issue",
                                 "--args", json.dumps({"repo": repo, "title": title,
@@ -458,9 +458,9 @@ def test_bank_act_injection():
         ("local", "copy-clipboard", {"text": "'" + payload}),
         ("local", "notify", {"message": "'" + payload, "title": "t"}),
         ("x", "write-draft", {"text": "'" + payload}),
-        ("repo", "list-issues", {"repo": "MediaPlural/consumer" + payload,
+        ("repo", "list-issues", {"repo": "MediaPlural/bradan" + payload,
                                  "state": "all", "limit": "1"}),
-        ("repo", "close-issue", {"repo": "MediaPlural/consumer", "number": "1" + payload,
+        ("repo", "close-issue", {"repo": "MediaPlural/bradan", "number": "1" + payload,
                                  "comment": "x" + payload}),
     ]
     for conn, act_name, args in cases:
