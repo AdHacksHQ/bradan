@@ -127,4 +127,5 @@ The INGEST.md manifest at the package root routes everything: load order, file m
 
 ## The integration bank
 
-`bank.py` — a local-first answer to IFTTT/Zapier/Composio, with the custody law intact: local-first auth (keychain), optional self-hosted Nango for the long tail, community-extendable via declarative manifests (`bank/connectors/*.json` — `bank.py add-manifest` validates and installs). Consume lanes pull archives into the graph; act lanes run declared actions through a shell-injection-proof runner (shlex-quoted args, no shell=True). See [INTEGRATIONS.md](INTEGRATIONS.md) for the landscape and the design position.
+`bank.py` — a local-first answer to IFTTT/Zapier/Composio, with the custody law intact: local-first auth (`ortie` for OAuth — [pimalaya/ortie](https://github.com/pimalaya/ortie),
+a public cross-platform Rust CLI — or keychain), optional self-hosted Nango for the long tail, community-extendable via declarative manifests (`bank/connectors/*.json` — `bank.py add-manifest` validates and installs). Consume lanes pull archives into the graph; act lanes run declared actions through a shell-injection-proof runner (shlex-quoted args, no shell=True). See [INTEGRATIONS.md](INTEGRATIONS.md) for the landscape and the design position.

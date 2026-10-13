@@ -27,7 +27,8 @@ The only overlap is OAuth plumbing — and that we adopt rather than rebuild.
 ## The consumer's connector architecture (three auth lanes)
 
 1. **Local (default, zero-dependency)**: `creds.py` (segmented store,
-   broker pattern) + `ortie` OAuth tokens + keychain/env passwords.
+   broker pattern) + `ortie` OAuth tokens ([pimalaya/ortie](https://github.com/pimalaya/ortie),
+   a public cross-platform Rust CLI) + keychain/env passwords.
    Works offline, nothing leaves the box. Verified live: gmail via ortie.
 2. **Nango (optional, 400+ apps)**: if you run Nango (self-hosted, open
    source), the consumer mints tokens through YOUR instance — `--auth nango`.
