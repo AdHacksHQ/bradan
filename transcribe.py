@@ -3,7 +3,7 @@
 
 Provenance: MLX Whisper pattern from the MediaPlural refurbapp ETL
 (pinned HF revision, isolated venv, JSON bridge subprocess, sanitized env).
-Verified live on sharpe-studio 2026-10-06: 15.7s test audio -> exact
+Verified live 2026-10-06: 15.7s test audio -> exact
 transcript in ~3s, word timestamps intact.
 
 Backend selection:
@@ -71,7 +71,7 @@ FFMPEG_CANDIDATES = [
     "/opt/homebrew/bin/ffmpeg",
     "/usr/local/bin/ffmpeg",
     os.path.expanduser("~/.hermes/tools/ffmpeg-9.0.1-darwin-arm64/ffmpeg"),
-    os.path.expanduser("~/sharpe-fleet/bin/ffmpeg"),
+    os.path.expanduser("~/bin/ffmpeg"),
     "/usr/bin/ffmpeg",
 ]
 

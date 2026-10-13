@@ -268,7 +268,7 @@ def _require_token(what):
         print(json.dumps({"ok": False, "error": "not authorized",
                           "status": st,
                           "remediation": (
-                              "place the ortie/adhacks HighLevel location "
+                              "place the HighLevel location "
                               "token (scope courses.readonly) at "
                               f"{TOKEN_PATH} — or export {TOKEN_ENV} — "
                               "then re-run this command. "
@@ -291,7 +291,7 @@ def cmd_status():
            "rate_limit_per_min": RATE_LIMIT_PER_MIN,
            "note": "token values are never printed"}
     if not authorized:
-        out["remediation"] = ("place the ortie/adhacks HighLevel location "
+        out["remediation"] = ("place the HighLevel location "
                               f"token (scope courses.readonly) at "
                               f"{TOKEN_PATH}, or export {TOKEN_ENV}. "
                               "See docs/HL-COURSE-LANE.md")
@@ -354,7 +354,7 @@ def main(argv=None):
                               "http": 401,
                               "remediation": "token invalid or missing "
                                              "courses.readonly scope — "
-                                             "re-issue via ortie/adhacks"},
+                                             "re-issue the token"},
                              indent=2), file=sys.stderr)
         else:
             print(json.dumps({"ok": False, "error": "HL API request failed",

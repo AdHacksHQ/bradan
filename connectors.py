@@ -2,12 +2,12 @@
 """consumer connectors — "consume my <app> archive" via real auth (OAuth/IMAP).
 
 The agent-native app layer: every connector knows how to (1) AUTHENTICATE —
-via ortie (our OAuth token manager, already wired for gmail/adhacks) or an
+via ortie (the OAuth token manager) or an
 app password — and (2) EXPORT an archive, which then flows through the
 standard engine (ingest -> graph, attributed to the connector).
 
 The credential law holds: tokens never appear in command lines, logs, or
-this file. Ortie mints them; we consume them in-process.
+this file. Ortie mints them; the engine consumes them in-process.
 
 Connectors (grow the list per app):
   gmail      Gmail / Google Workspace (ortie Gmail-API account, or IMAP)
@@ -298,7 +298,7 @@ def main():
     p = sub.add_parser("auth"); p.add_argument("connector", choices=list(CONNECTORS))
     p = sub.add_parser("export"); p.add_argument("connector", choices=list(CONNECTORS))
     p.add_argument("--query", default="trashed = false", help="drive: files.list query")
-    p.add_argument("--account", default="adhacks", help="ortie account (gmail)")
+    p.add_argument("--account", default="default", help="ortie account (gmail)")
     p.add_argument("--since", default=None, help="YYYY-MM-DD")
     p.add_argument("--limit", type=int, default=None)
     p.add_argument("--out", default=None, help="export dir (default ./mail-archive)")

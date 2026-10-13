@@ -55,9 +55,9 @@ def sha256_file(path):
 class Fetcher:
     def __init__(self, cookie_jar=None, extra_headers=None, platform=None):
         """platform: when set, credentials come from the segmented store
-        (creds.Broker) instead of a raw cookie file — the Muse-authd pattern:
-        the pipeline never touches credential material, the broker attaches
-        it at the network boundary. Legacy --cookies still works."""
+        (creds.Broker) instead of a raw cookie file — the credential-broker
+        pattern: the pipeline never touches credential material, the broker
+        attaches it at the network boundary. Legacy --cookies still works."""
         self.broker = None
         if platform:
             import creds
@@ -166,7 +166,7 @@ class Crawler:
         rec = {"kind": kind, "url": url, "file": os.path.abspath(path),
                "sha256": sha256_file(path), "tool": tool, "size": os.path.getsize(path),
                "acquired_at": time.strftime("%Y-%m-%dT%H:%M:%S%z")}
-        # Muse-pattern provenance: identity only, never credential material
+        # broker provenance: identity only, never credential material
         broker = getattr(self.fx, "broker", None)
         if broker is not None and broker.has_credentials:
             rec["credential"] = broker.identity()
@@ -210,7 +210,7 @@ class Crawler:
         # referer is required or the manifest 403s
         if "skool.com" in url or "skool.com" in (referer or ""):
             cmd += ["--referer", "https://www.skool.com"]
-        # Muse-pattern boundary: if a broker is attached, hand yt-dlp the
+        # broker boundary: if a broker is attached, hand yt-dlp the
         # segmented slot file — never a copy, never an inline cookie value
         broker = getattr(self.fx, "broker", None)
         if broker is not None and broker.has_credentials:

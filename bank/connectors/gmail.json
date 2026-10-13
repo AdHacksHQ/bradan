@@ -3,7 +3,7 @@
   "display_name": "Gmail / Google Workspace",
   "status": "stable",
   "auth_method": "ortie",
-  "ortie_account": "adhacks",
+  "ortie_account": "default",
   "capabilities": ["read"],
   "consume": {
     "description": "email archive -> attributed graph",

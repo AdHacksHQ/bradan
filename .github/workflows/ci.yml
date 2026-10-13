@@ -1,7 +1,7 @@
 name: CI
 
 # Stdlib-only by design. Running the suite across several Python versions is the
-# cheapest possible proof of that claim — and of the estate's platform-agnostic
+# cheapest possible proof of that claim — and of the project's platform-agnostic
 # law: a solution must survive an account/platform swap, not just the machine it
 # was written on.
 #

@@ -14,7 +14,7 @@ from consumed knowledge, or running bank connectors — use the consumer engine.
 Resolve the engine first:
 ```bash
 CONSUMER_HOME=""
-for c in /Users/sharpe/consumer "$HOME/consumer" "tools/consumer"; do
+for c in "$HOME/consumer" "tools/consumer"; do
   [ -d "$c" ] && CONSUMER_HOME="$c" && break
 done
 ```

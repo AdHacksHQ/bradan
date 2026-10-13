@@ -299,14 +299,14 @@ def xp_for_lesson(lesson, idx):
 
 # --- Guild progression adapter (contract: docs/GAME-ADAPTER.md) -------------
 #
-# Canonical guild event schema, read from the viiy-hq guild progression
+# Canonical guild event schema, read from the guild progression
 # codex (READ-ONLY sources, cited in docs/GAME-ADAPTER.md):
-#   - viiy-hq/game/design/XP-REWARD-SYSTEM.md  (quest tiers, XP sources,
+#   - game/design/XP-REWARD-SYSTEM.md  (quest tiers, XP sources,
 #     reward-event resolution sequence, quality multipliers)
-#   - viiy-hq/game/design/PROGRESSION-STATS-CODEX-v2.md (stage/rank ladder:
+#   - game/design/PROGRESSION-STATS-CODEX-v2.md (stage/rank ladder:
 #     18 stages, 4 bands Early/Middle/Late/Peak, Level 1-100 per stage,
-#     Twin Realm: worldly_rank vs soul_stage)
-#   - viiy-hq/guild/identity-tags/backend/SIGNING.md + ENROLLMENT-FLOW.md
+#     Twin Realm: worldly_rank vs inner_stage)
+#   - guild/identity-tags/backend/SIGNING.md + ENROLLMENT-FLOW.md
 #     (member identity: member_uuid, rank, rank_level)
 #
 # A consumer lesson completion maps onto a guild Quest Completion XP event

@@ -7,7 +7,7 @@ Rationale (dossier §5.10): HL's tree (products → categories → lessons, with
 lesson _content_ is not — so the ingest dir carries a complete map even when
 the cookie crawl later recovers only partial content.
 
-Source study: `~/.viiy-hq/.../HL-MEMBERSHIP-COURSE-UX-STUDY-2026-10-06.md`
+Source study: the internal HighLevel membership-course UX study (2026-10-06)
 (§1.2 endpoint schemas [SPEC], §3 ingest contract).
 
 ## Usage
@@ -69,13 +69,13 @@ python3 hl_course.py status
   "token_env_set": false,
   "rate_limit_per_min": 80,
   "note": "token values are never printed",
-  "remediation": "place the ortie/adhacks HighLevel location token (scope
+  "remediation": "place the HighLevel location token (scope
   courses.readonly) at ~/.consumer/creds/highlevel/token, or export
   CONSUMER_HL_TOKEN. See docs/HL-COURSE-LANE.md"
 }
 ```
 
-The ortie/adhacks token **does not exist yet** on this machine. Until it
+The HighLevel token **does not exist yet** on this machine. Until it
 lands, `list`/`map` exit honestly (`not authorized`) rather than pretending.
 
 ## API contract (Courses v3)

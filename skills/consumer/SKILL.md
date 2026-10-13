@@ -51,8 +51,8 @@ One engine, every runtime. This SKILL.md speaks the AgentSkills dialect
 below for non-AgentSkills runtimes (VS Code/Copilot via MCP, any MCP client).
 
 Repo: `https://github.com/MediaPlural/bradan` (MIT). Local checkout:
-run `CONSUMER_HOME` discovery below; default `/Users/sharpe/consumer`
-(studio), `~/consumer` (umbra), `tools/consumer` in the refurbapp worktree.
+run `CONSUMER_HOME` discovery below; default `~/consumer`, or
+`tools/consumer` inside a repo worktree.
 
 ## Universal invocation law
 
@@ -72,7 +72,6 @@ differences are only HOW tools are called:
 The engine is a directory with bank.py/graph.py/ingest.py. Find it:
 
 ```
-[ -d /Users/sharpe/consumer ] && CONSUMER_HOME=/Users/sharpe/consumer
 [ -d "$HOME/consumer" ] && CONSUMER_HOME="$HOME/consumer"
 [ -d "tools/consumer" ] && CONSUMER_HOME="tools/consumer"
 [ -z "$CONSUMER_HOME" ] && CONSUMER_HOME=$(find ~ -maxdepth 3 -name bank.py \
@@ -166,7 +165,7 @@ consumer` (created by install-everywhere.sh; OpenClaw not yet installed on
 ## Laws
 
 - Local-first, custody law: credentials via segmented store
-  `~/.consumer/creds/<platform>/` (Muse pattern, Broker-only) or keychain;
+  `~/.consumer/creds/<platform>/` (broker pattern) or keychain;
   never in code, logs, or argv.
 - Attribution is inbuilt, end-to-end: url + credential-identity + timestamp
   flow from acquisition -> corpus -> graph -> query results.
@@ -178,7 +177,7 @@ consumer` (created by install-everywhere.sh; OpenClaw not yet installed on
 
 ## Verifications (all live-tested)
 
-- 57/57 tests (studio + Brandon worktree), 55/55 umbra
+- 57/57 tests (macOS + Linux), 55/55 on the batch node
 - STT: 99.7s video -> 46 segments in 4.5s
 - gmail consume: 15 real messages -> 861 chunks
 - OCR: rendered PNG -> 100% correct text

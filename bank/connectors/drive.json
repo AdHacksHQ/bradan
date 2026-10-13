@@ -3,7 +3,7 @@
   "display_name": "Google Drive",
   "status": "beta",
   "auth_method": "ortie",
-  "ortie_account": "adhacks",
+  "ortie_account": "default",
   "capabilities": ["read"],
   "consume": {
     "description": "docs/sheets/pdfs -> attributed graph (needs drive.readonly scope)",

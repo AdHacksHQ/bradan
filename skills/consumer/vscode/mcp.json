@@ -5,7 +5,7 @@
       "command": "python3",
       "args": ["${CONSUMER_HOME}/mcp-server.py"],
       "env": {
-        "CONSUMER_GRAPH_DB": "/Users/sharpe/consumer-out/consumer.sqlite3"
+        "CONSUMER_GRAPH_DB": "${CONSUMER_HOME}/consumer-out/consumer.sqlite3"
       }
     }
   }

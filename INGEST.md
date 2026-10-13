@@ -1,6 +1,6 @@
-# consumer — Course Consumer & Assimilator
+# bradan — Course Consumer & Assimilator
 
-A big concept from a course — configured to work for our systems.
+A big concept from a course — configured to work with your agent stack.
 
 > Full docs: [README.md](README.md) — pipeline rationale, pins, design law.
 
@@ -12,7 +12,7 @@ A big concept from a course — configured to work for our systems.
 - Every stage writes a provenance record: scrape → `acquisition.json` (url, sha256, tool, timestamp); transcribe → `<stem>.sha256`; distill reads transcripts, never mutates them.
 - Tests: `python3 tests/test_smoke.py` — fast, offline, no model download. Run before every PR. CI (GitHub Actions) runs the same suite.
 - Commit style: imperative subject, body explains _why_ (what wall it removes). PRs follow the same law.
-- When adding a capability, ask: does this belong in core (works for anyone with a folder of course files) or in an adapter (MediaPlural-specific wiring)? Adapters go to HANDBOOK.md.
+- When adding a capability, ask: does this belong in core (works for anyone with a folder of course files) or in an adapter (deployment-specific wiring)? Adapters go to HANDBOOK.md.
 
 ## Pipeline map (machine-readable)
 

@@ -16,9 +16,9 @@ Usage:
   python3 watch.py --dir ... --db ... --interval 10 --once   (one sweep, exit)
 
 Design: stdlib only. Polling (os.scandir + mtime/sha compare) over FSEvents —
-portable (works on umbra/Linux), zero deps, and the cost is one scandir per
-interval. Heavy STT during watch: run this on the batch box (umbra), not the
-daily driver — fleet doctrine.
+portable (works on Linux/macOS/Windows), zero deps, and the cost is one
+scandir per interval. Heavy STT during watch: run this on the batch box, not
+the daily driver.
 """
 import argparse
 import json

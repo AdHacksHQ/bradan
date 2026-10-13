@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """consumer creds — segmented credential store + network-boundary injection.
 
-Pattern credit: Muse's security architecture (hatch-authd / privsep /
-Sentinel), simplified to a stdlib-only repo. The load-bearing split:
+Pattern credit: a privilege-separated security architecture (auth daemon /
+privsep / permission authority), simplified to a stdlib-only repo. The
+load-bearing split:
 
   THE PIPELINE NEVER TOUCHES CREDENTIAL FILES.
   creds.broker() is the ONLY code that reads them — credentials attach at the
@@ -234,7 +235,7 @@ def cmd_list():
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Segmented credential store (Muse-authd pattern)")
+    ap = argparse.ArgumentParser(description="Segmented credential store (credential-broker pattern)")
     sub = ap.add_subparsers(dest="cmd", required=True)
     p1 = sub.add_parser("init"); p1.add_argument("platform")
     p2 = sub.add_parser("import"); p2.add_argument("platform"); p2.add_argument("cookie_file")

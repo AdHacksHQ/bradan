@@ -45,7 +45,7 @@ say "installing acquisition tooling (yt-dlp, huggingface-hub)"
 
 # --- ffmpeg check (whisper shells out to it for decode) ---
 if ! command -v ffmpeg >/dev/null 2>&1; then
-  for c in "$HOME/.hermes/tools/ffmpeg-9.0.1-darwin-arm64/ffmpeg" "$HOME/sharpe-fleet/bin/ffmpeg"; do
+  for c in "$HOME/.hermes/tools/ffmpeg-9.0.1-darwin-arm64/ffmpeg" "$HOME/bin/ffmpeg"; do
     [ -x "$c" ] && say "note: ffmpeg found at $c (transcribe.py will pick it up)" && break
   done || say "WARNING: no ffmpeg on PATH — transcription will fail until ffmpeg is installed"
 fi
